@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Your website description" />
+    <title>Real Estate App</title>
+    <!-- Tailwind CSS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            container: {
+              center: true,
+              padding: "1rem",
+              screens: {
+                sm: "100%",
+                md: "768px",
+                lg: "1024px",
+                xl: "1280px",
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="bg-[rgb(9,29,53)] p-3">
+      <div class="flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="./" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <span class="self-center text-2xl font-bold text-white"
+            >ALAYO HOMES</span
+          >
+        </a>
+        <button
+          data-collapse-toggle="navbar-dropdown"
+          type="button"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center md:hidden text-red-400 focus:outline-none focus:ring-2 focus:ring-gray-200"
+          aria-controls="navbar-dropdown"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <svg
+            class="w-5 h-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 17 14"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15"
+            />
+          </svg>
+        </button>
+        <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+          <ul
+            class="flex flex-col font-medium p-4 md:p-0 mt-4 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0"
+          >
+            <li>
+              <a
+                href="./"
+                class="block py-2 px-3 text-white hover:text-red-400"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <button
+                id="dropdownNavbarLink"
+                data-dropdown-toggle="dropdownNavbar"
+                class="flex items-center justify-between w-full py-2 px-3 text-white hover:text-red-400"
+              >
+                Property
+                <svg
+                  class="w-2.5 h-2.5 ms-2.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 1 4 4 4-4"
+                  />
+                </svg>
+              </button>
+              <!-- Dropdown menu -->
+              <div
+                id="dropdownNavbar"
+                class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg w-44 dark:divide-gray-600"
+              >
+                <ul
+                  class="py-2 text-sm bg-[rgb(9,29,53)]"
+                  aria-labelledby="dropdownLargeButton"
+                >
+                  <li>
+                    <a
+                      href="./"
+                      class="block px-4 py-2 text-white hover:text-red-400"
+                      >All</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./buy.html"
+                      class="block px-4 py-2 text-white hover:text-red-400"
+                      >Buy</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./sell.html"
+                      class="block px-4 py-2 text-white hover:text-red-400"
+                      >Sell</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a
+                href="./about.html"
+                class="block py-2 px-3 text-white hover:text-red-400"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="./pricing.html"
+                class="block py-2 px-3 text-white hover:text-red-400"
+                >Pricing</a
+              >
+            </li>
+            <li>
+              <a
+                href="./contact.html"
+                class="block py-2 px-3 text-white hover:text-red-400"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero -->
+      <section
+        class="w-full lg:min-h-[80vh] pb-10 bg-[url('./assests/alayo-5.jpg')] bg-cover bg-center"
+      >
+        <div class="text-center pt-[80px] md:pt-[100px] lg:pt-[200px]">
+          <h3 class="sm:text-[4rem] text-[2.5rem] font-extrabold text-white">
+            New Properties
+          </h3>
+          <p class="lead text-[1.2rem] mb-10 text-white">
+            EXCLUSIVELY BY KINPLUS
+          </p>
+          <button
+            type="button"
+            class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-md font-semibold w-[200px] px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+          >
+            Explore
+          </button>
+        </div>
+      </section>
+      <!-- Looking for what to buy -->
+      <section class="w-full sm:p-5 mt-10">
+        <div class="container">
+          <div class="grid md:grid-cols-2 gap-5">
+            <div
+              class="bg-[url('./assests/alayo-1.jpg')] p-20 bg-cover bg-center text-center w-full bg-black bg-opacity-80 bg-blend-overlay"
+            >
+              <h4 class="text-[2rem] font-bold text-white">Buy</h4>
+            </div>
+            <div
+              class="bg-[url('./assests/alayo-8.jpg')] p-20 bg-cover text-center bg-center w-full bg-black bg-opacity-80 bg-blend-overlay"
+            >
+              <h4 class="text-[2rem] font-bold text-white">Rent</h4>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Properties -->
+      <section class="container pt-20">
+        <div class="text-center">
+          <p class="mb-5">NEW PROPERTIES</p>
+          <h4 class="text-[#091D35] text-3xl font-bold mb-10">For Sale</h4>
+          <div class="flex items-center justify-center">
+            <div class="grid sm:grid-cols-2 gap-8">
+              <div class="min-w-[18rem] bg-white border">
+                <a href="./">
+                  <img
+                    class="rounded-t-lg"
+                    src="./assests/alayo-8.jpg"
+                    alt=""
+                  />
+                </a>
+                <div class="text-start mx-5 pt-4">
+                  <a href="#">
+                    <h5
+                      class="mb-2 text-2xl font-bold tracking-tight text-[#2B2B2B] hover:text-[#E50E0B]"
+                    >
+                      22024 Ikeja avenue
+                    </h5>
+                  </a>
+                  <p class="mb-3 font-normal">San Francisco, CA, USA</p>
+                  <h5 class="text-xl font-semibold">$1,500</h5>
+                </div>
+                <div class="border mb-2 border-gray-200 mt-5"></div>
+                <div class="flex mx-8 justify-around my-8">
+                  <div class="one flex flex-col">
+                    <i class="fa-solid fa-bed"></i>
+                    <p class="font-bold">Bed</p>
+                    <p>4</p>
+                  </div>
+                  <div class="one flex flex-col">
+                    <i class="fa-solid fa-bath"></i>
+                    <p class="font-bold">Bath</p>
+                    <p>2</p>
+                  </div>
+                  <div class="one flex flex-col">
+                    <i class="fa-brands fa-nfc-directional"></i>
+                    <p class="font-bold">Levels</p>
+                    <p>3</p>
+                  </div>
+                  <div class="one flex flex-col">
+                    <i class="fa-solid fa-landmark"></i>
+                    <p class="font-bold">Sqft</p>
+                    <p>12500</p>
+                  </div>
+                </div>
+              </div>
+              <div class="min-w-[18rem] bg-white border">
+                <a href="./">
+                  <img
+                    class="rounded-t-lg"
+                    src="./assests/alayo-8.jpg"
+                    alt=""
+                  />
+                </a>
+                <div class="text-start mx-5 pt-4">
+                  <a href="#">
+                    <h5
+                      class="mb-2 text-2xl font-bold tracking-tight text-[#2B2B2B] hover:text-[#E50E0B]"
+                    >
+                      22024 Ikeja avenue
+                    </h5>
+                  </a>
+                  <p class="mb-3 font-normal">San Francisco, CA, USA</p>
+                  <h5 class="text-xl font-semibold">$1,500</h5>
+                </div>
+                <div class="border mb-2 border-gray-200 mt-5"></div>
+                <div class="flex mx-8 justify-around my-8">
+                  <div class="one flex flex-col">
+                    <i class="fa-solid fa-bed"></i>
+                    <p class="font-bold">Bed</p>
+                    <p>4</p>
+                  </div>
+                  <div class="one flex flex-col">
+                    <i class="fa-solid fa-bath"></i>
+                    <p class="font-bold">Bath</p>
+                    <p>2</p>
+                  </div>
+                  <div class="one flex flex-col">
+                    <i class="fa-brands fa-nfc-directional"></i>
+                    <p class="font-bold">Levels</p>
+                    <p>3</p>
+                  </div>
+                  <div class="one flex flex-col">
+                    <i class="fa-solid fa-landmark"></i>
+                    <p class="font-bold">Sqft</p>
+                    <p>12500</p>
+                  </div>
+                </div>
+              </div>
+              <div class="min-w-[18rem] bg-white border">
+                <a href="./">
+                  <img
+                    class="rounded-t-lg"
+                    src="./assests/alayo-8.jpg"
+                    alt=""
+                  />
+                </a>
+                <div class="text-start mx-5 pt-4">
+                  <a href="#">
+                    <h5
+                      class="mb-2 text-2xl font-bold tracking-tight text-[#2B2B2B] hover:text-[#E50E0B]"
+                    >
+                      22024 Ikeja avenue
+                    </h5>
+                  </a>
+                  <p class="mb-3 font-normal">San Francisco, CA, USA</p>
+                  <h5 class="text-xl font-semibold">$1,500</h5>
+                </div>
+                <div class="border mb-2 border-gray-200 mt-5"></div>
+                <div class="flex mx-8 justify-around my-8">
+                  <div class="one flex flex-col">
+                    <i class="fa-solid fa-bed"></i>
+                    <p class="font-bold">Bed</p>
+                    <p>4</p>
+                  </div>
+                  <div class="one flex flex-col">
+                    <i class="fa-solid fa-bath"></i>
+                    <p class="font-bold">Bath</p>
+                    <p>2</p>
+                  </div>
+                  <div class="one flex flex-col">
+                    <i class="fa-brands fa-nfc-directional"></i>
+                    <p class="font-bold">Levels</p>
+                    <p>3</p>
+                  </div>
+                  <div class="one flex flex-col">
+                    <i class="fa-solid fa-landmark"></i>
+                    <p class="font-bold">Sqft</p>
+                    <p>12500</p>
+                  </div>
+                </div>
+              </div>
+              <div class="min-w-[18rem] bg-white border">
+                <a href="./">
+                  <img
+                    class="rounded-t-lg"
+                    src="./assests/alayo-8.jpg"
+                    alt=""
+                  />
+                </a>
+                <div class="text-start mx-5 pt-4">
+                  <a href="#">
+                    <h5
+                      class="mb-2 text-2xl font-bold tracking-tight text-[#2B2B2B] hover:text-[#E50E0B]"
+                    >
+                      22024 Ikeja avenue
+                    </h5>
+                  </a>
+                  <p class="mb-3 font-normal">San Francisco, CA, USA</p>
+                  <h5 class="text-xl font-semibold">$1,500</h5>
+                </div>
+                <div class="border mb-2 border-gray-200 mt-5"></div>
+                <div class="flex mx-8 justify-around my-8">
+                  <div class="one flex flex-col">
+                    <i class="fa-solid fa-bed"></i>
+                    <p class="font-bold">Bed</p>
+                    <p>4</p>
+                  </div>
+                  <div class="one flex flex-col">
+                    <i class="fa-solid fa-bath"></i>
+                    <p class="font-bold">Bath</p>
+                    <p>2</p>
+                  </div>
+                  <div class="one flex flex-col">
+                    <i class="fa-brands fa-nfc-directional"></i>
+                    <p class="font-bold">Levels</p>
+                    <p>3</p>
+                  </div>
+                  <div class="one flex flex-col">
+                    <i class="fa-solid fa-landmark"></i>
+                    <p class="font-bold">Sqft</p>
+                    <p>12500</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-8">
+            <div class="flex items-center justify-center">
+              <button
+                type="button"
+                class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-md font-semibold w-[200px] px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+              >
+                View More
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- For Rent -->
+      <section class="container pt-20">
+        <div class="text-center">
+          <p class="mb-5">NEW PROPERTIES</p>
+          <h4 class="text-[#091D35] text-3xl font-bold mb-10">For Rent</h4>
+          <div class="flex items-center justify-center">
+            <div class="grid sm:grid-cols-2 gap-8">
+              <div class="min-w-[18rem] bg-white border">
+                <a href="./">
+                  <img
+                    class="rounded-t-lg"
+                    src="./assests/alayo-9.jpg"
+                    alt=""
+                  />
+                </a>
+                <div class="text-start mx-5 pt-4">
+                  <a href="#">
+                    <h5
+                      class="mb-2 text-2xl font-bold tracking-tight text-[#2B2B2B] hover:text-[#E50E0B]"
+                    >
+                      22024 Ikeja avenue
+                    </h5>
+                  </a>
+                  <p class="mb-3 font-normal">San Francisco, CA, USA</p>
+                  <h5 class="text-xl font-semibold">$1,500</h5>
+                </div>
+                <div class="border mb-2 border-gray-200 mt-5"></div>
+                <div class="flex mx-8 justify-around my-8">
+                  <div class="one flex flex-col">
+                    <i class="fa-solid fa-bed"></i>
+                    <p class="font-bold">Bed</p>
+                    <p>4</p>
+                  </div>
+                  <div class="one flex flex-col">
+                    <i class="fa-solid fa-bath"></i>
+                    <p class="font-bold">Bath</p>
+                    <p>2</p>
+                  </div>
+                  <div class="one flex flex-col">
+                    <i class="fa-brands fa-nfc-directional"></i>
+                    <p class="font-bold">Levels</p>
+                    <p>3</p>
+                  </div>
+                  <div class="one flex flex-col">
+                    <i class="fa-solid fa-landmark"></i>
+                    <p class="font-bold">Sqft</p>
+                    <p>12500</p>
+                  </div>
+                </div>
+              </div>
+              <div class="min-w-[18rem] bg-white border">
+                <a href="./">
+                  <img
+                    class="rounded-t-lg"
+                    src="./assests/alayo-6.jpg"
+                    alt=""
+                  />
+                </a>
+                <div class="text-start mx-5 pt-4">
+                  <a href="#">
+                    <h5
+                      class="mb-2 text-2xl font-bold tracking-tight text-[#2B2B2B] hover:text-[#E50E0B]"
+                    >
+                      22024 Ikeja avenue
+                    </h5>
+                  </a>
+                  <p class="mb-3 font-normal">San Francisco, CA, USA</p>
+                  <h5 class="text-xl font-semibold">$1,500</h5>
+                </div>
+                <div class="border mb-2 border-gray-200 mt-5"></div>
+                <div class="flex mx-8 justify-around my-8">
+                  <div class="one flex flex-col">
+                    <i class="fa-solid fa-bed"></i>
+                    <p class="font-bold">Bed</p>
+                    <p>4</p>
+                  </div>
+                  <div class="one flex flex-col">
+                    <i class="fa-solid fa-bath"></i>
+                    <p class="font-bold">Bath</p>
+                    <p>2</p>
+                  </div>
+                  <div class="one flex flex-col">
+                    <i class="fa-brands fa-nfc-directional"></i>
+                    <p class="font-bold">Levels</p>
+                    <p>3</p>
+                  </div>
+                  <div class="one flex flex-col">
+                    <i class="fa-solid fa-landmark"></i>
+                    <p class="font-bold">Sqft</p>
+                    <p>12500</p>
+                  </div>
+                </div>
+              </div>
+              <div class="min-w-[18rem] bg-white border">
+                <a href="./">
+                  <img
+                    class="rounded-t-lg"
+                    src="./assests/alayo-9.jpg"
+                    alt=""
+                  />
+                </a>
+                <div class="text-start mx-5 pt-4">
+                  <a href="#">
+                    <h5
+                      class="mb-2 text-2xl font-bold tracking-tight text-[#2B2B2B] hover:text-[#E50E0B]"
+                    >
+                      22024 Ikeja avenue
+                    </h5>
+                  </a>
+                  <p class="mb-3 font-normal">San Francisco, CA, USA</p>
+                  <h5 class="text-xl font-semibold">$1,500</h5>
+                </div>
+                <div class="border mb-2 border-gray-200 mt-5"></div>
+                <div class="flex mx-8 justify-around my-8">
+                  <div class="one flex flex-col">
+                    <i class="fa-solid fa-bed"></i>
+                    <p class="font-bold">Bed</p>
+                    <p>4</p>
+                  </div>
+                  <div class="one flex flex-col">
+                    <i class="fa-solid fa-bath"></i>
+                    <p class="font-bold">Bath</p>
+                    <p>2</p>
+                  </div>
+                  <div class="one flex flex-col">
+                    <i class="fa-brands fa-nfc-directional"></i>
+                    <p class="font-bold">Levels</p>
+                    <p>3</p>
+                  </div>
+                  <div class="one flex flex-col">
+                    <i class="fa-solid fa-landmark"></i>
+                    <p class="font-bold">Sqft</p>
+                    <p>12500</p>
+                  </div>
+                </div>
+              </div>
+              <div class="min-w-[18rem] bg-white border">
+                <a href="./">
+                  <img
+                    class="rounded-t-lg"
+                    src="./assests/alayo-2.jpg"
+                    alt=""
+                  />
+                </a>
+                <div class="text-start mx-5 pt-4">
+                  <a href="#">
+                    <h5
+                      class="mb-2 text-2xl font-bold tracking-tight text-[#2B2B2B] hover:text-[#E50E0B]"
+                    >
+                      22024 Ikeja avenue
+                    </h5>
+                  </a>
+                  <p class="mb-3 font-normal">San Francisco, CA, USA</p>
+                  <h5 class="text-xl font-semibold">$1,500</h5>
+                </div>
+                <div class="border mb-2 border-gray-200 mt-5"></div>
+                <div class="flex mx-8 justify-around my-8">
+                  <div class="one flex flex-col">
+                    <i class="fa-solid fa-bed"></i>
+                    <p class="font-bold">Bed</p>
+                    <p>4</p>
+                  </div>
+                  <div class="one flex flex-col">
+                    <i class="fa-solid fa-bath"></i>
+                    <p class="font-bold">Bath</p>
+                    <p>2</p>
+                  </div>
+                  <div class="one flex flex-col">
+                    <i class="fa-brands fa-nfc-directional"></i>
+                    <p class="font-bold">Levels</p>
+                    <p>3</p>
+                  </div>
+                  <div class="one flex flex-col">
+                    <i class="fa-solid fa-landmark"></i>
+                    <p class="font-bold">Sqft</p>
+                    <p>12500</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-8">
+            <div class="flex items-center justify-center">
+              <button
+                type="button"
+                class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-md font-semibold w-[200px] px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+              >
+                View More
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Client stories -->
+      <section class="w-full mt-8">
+        <div class="sm:container">
+          <h4 class="my-5 text-center">CLIENTS STORIES</h4>
+          <div
+            id="default-carousel"
+            class="relative w-full bg-[rgb(9,29,53)]"
+            data-carousel="slide"
+          >
+            <!-- Carousel wrapper -->
+            <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+              <!-- Item 1 -->
+              <div class="duration-700 ease-in-out" data-carousel-item>
+                <div
+                  class="flex items-center justify-center flex-col text-white lg:my-[10%] my-[18%] px-[22%]"
+                >
+                  <p class="sm:text-[1rem] text-[0.65rem]">
+                    The customer service was outstanding, guiding me through every step with professionalism and care. The property is exactly what I envisioned, and the entire process was smooth and stress-free. ALAYO HOMES truly delivered on their promise of quality and excellence. I highly recommend them to anyone seeking a reliable real estate partner.
+                  </p>
+                  <div class="mt-5">
+                    <h4 class="font-bold text-xl text-[#F96250]">
+                      Mr. N. I Chukwuemeka
+                    </h4>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 2 -->
+              <div class="duration-700 ease-in-out" data-carousel-item>
+                <div
+                  class="flex items-center justify-center flex-col lg:my-[10%] my-[18%] text-white px-[22%]"
+                >
+                  <p class="sm:text-[1rem] text-[0.65rem]">
+                    "Their fast response and attention to detail made the entire buying process effortless. The quality of the property exceeded my expectations, and the team was always available to address my concerns. I’m extremely satisfied with my purchase and would highly recommend ALAYO HOMES to anyone seeking a reliable real estate partner."
+                  </p>
+                  <div class="mt-5">
+                    <h4 class="font-bold text-xl text-[#F96250]">
+                      Jay Blake, FL
+                    </h4>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 3 -->
+              <div class="duration-700 ease-in-out" data-carousel-item>
+                <div
+                  class="flex items-center justify-center flex-col lg:my-[10%] my-[18%] text-white px-[22%]"
+                >
+                  <p class="sm:text-[1rem] text-[0.65rem]">
+                    From start to finish, everything was handled professionally. I couldn’t be happier with my beautiful, well-built home
+                  </p>
+                  <div class="mt-5">
+                    <h4 class="font-bold text-xl text-[#F96250]">
+                      Mrs. J. B Adekunle
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Slider indicators -->
+            <div
+              class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
+            >
+              <button
+                type="button"
+                class="w-3 h-3 rounded-full"
+                aria-current="true"
+                aria-label="Slide 1"
+                data-carousel-slide-to="0"
+              ></button>
+              <button
+                type="button"
+                class="w-3 h-3 rounded-full"
+                aria-current="false"
+                aria-label="Slide 2"
+                data-carousel-slide-to="1"
+              ></button>
+              <button
+                type="button"
+                class="w-3 h-3 rounded-full"
+                aria-current="false"
+                aria-label="Slide 3"
+                data-carousel-slide-to="2"
+              ></button>
+            </div>
+            <!-- Slider controls -->
+            <button
+              type="button"
+              class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-1 cursor-pointer group focus:outline-none"
+              data-carousel-prev
+            >
+              <span
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+              >
+                <svg
+                  class="sm:w-4 sm:h-4 w-2 h-2 text-white dark:text-gray-800 rtl:rotate-180"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 6 10"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 1 1 5l4 4"
+                  />
+                </svg>
+                <span class="sr-only">Previous</span>
+              </span>
+            </button>
+            <button
+              type="button"
+              class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-1 cursor-pointer group focus:outline-none"
+              data-carousel-next
+            >
+              <span
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+              >
+                <svg
+                  class="sm:w-4 sm:h-4 w-2 h-2 text-white dark:text-gray-800 rtl:rotate-180"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 6 10"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 9 4-4-4-4"
+                  />
+                </svg>
+                <span class="sr-only">Next</span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="w-full">
+        <div class="relative h-96 overflow-hidden">
+          <div
+            class="absolute bg-[url('./assests/alayo-2.jpg')] inset-0 bg-fixed bg-cover bg-center parallax-bg"
+          ></div>
+        </div>
+      </section>
+      <section class="w-full bg-[#E4ECF2] pt-10 pb-10">
+        <h4 class="text-center text-2xl text-[#424343]">
+          YOUR DREAM HOUSE IS ONE STEP AWAY!
+        </h4>
+        <div class="flex items-center justify-center md:px-5 mt-[90px]">
+          <div class="grid md:grid-cols-3 gap-10 md:gap-[200px] mb-10">
+            <div class="col-span-1">
+              <div class="flex flex-col text-center space-y-3">
+                <i class="fa-solid fa-phone text-[3rem] text-[#E50E0B]"></i>
+                <h3 class="text-2xl font-semibold text-[#424343]">Call Us</h3>
+                <p class="text-[#424343]">Free Calls</p>
+                <p class="text-[#424343]">+234-810-0000-123</p>
+              </div>
+            </div>
+            <div class="col-span-1">
+              <div class="flex flex-col text-center space-y-3">
+                <i
+                  class="fa-solid fa-location-dot text-[3rem] text-[#E50E0B]"
+                ></i>
+                <h3 class="text-2xl font-semibold text-[#424343]">Find Us</h3>
+                <p class="text-[#424343]">500 Terry Francine St.</p>
+                <p class="text-[#424343]">San Francisco, CA 94158</p>
+              </div>
+            </div>
+            <div class="col-span-1">
+              <div class="flex flex-col text-center space-y-3">
+                <i class="fa-solid fa-envelope text-[3rem] text-[#E50E0B]"></i>
+                <h3 class="text-2xl font-semibold text-[#424343]">Email Us</h3>
+                <p class="text-[#424343]">Direct Email</p>
+                <p class="text-[#424343]">info@mysite.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="w-full bg-[#1D2D42] p-5">
+        <div class="lg:grid lg:grid-cols-6 gap-5 lg:gap-[150px] lg:px-10">
+          <div class="col-span-2 text-white space-y-10 mt-10">
+            <h6 class="text-2xl  font-bold">FIND YOUR NEXT HOME</h6>
+            <p class="">
+              At AlAYO HOMES, finding your next home is easy. Browser our listings online, visit our model homes, or speak with dedicated agents.We'll guide you through.
+            </p>
+          </div>
+          <div class="col-span-4 text-white pt-[50px]">
+            <h6 class="text-start text-white">CONTACT US</h6>
+            <div class="mt-[50px]">
+              <form class="mb-[80px]">
+                <div class="flex flex-col text-white space-y-5">
+                  <div class="grid md:grid-cols-2 gap-5 mb-5">
+                    <div>
+                        <label for="first_name" class="block">First name</label>
+                        <input type="text" id="first_name" class="bg-transparent w-full border-0 border-b-2"  required />
+                    </div>
+                    <div>
+                        <label for="last_name" class="block">Last name</label>
+                        <input type="text" id="last_name" class="bg-transparent w-full border-0 border-b-2" />
+                    </div>
+                  </div>
+                <div class="flex justify-between flex-wrap">
+                    <label for="remember" class="ms-2 text-sm font-medium">Interested in:</label>
+
+                    <div class="buy flex items-center gap-4">
+                    <input name="Interested" type="radio" value="" class=""  />
+                    <h4 class="text-lg font-semibold">Buy</h4>
+                    </div>
+
+                    <div class="rent flex items-center gap-4">
+                    <input name="Interested" type="radio" value="" class=""  />
+                    <h4 class="text-lg font-semibold">Rent</h4>
+                    </div>
+
+                    <div class="other flex items-center gap-4">
+                    <input name="Interested" type="radio" value="Other" class=""  />
+                    <h4 class="text-lg font-semibold">Other</h4>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                  <label for="message" class="block mb-3">Message</label>
+                  <textarea id="message" name="message" rows="4" class="bg-transparent w-full border-0 border-b-2 outline-none focus:outline-none focus:border-none p-3"></textarea>
+                </div>
+                <div class="flex justify-end me-5 my-8">
+                <button
+                type="submit"
+                class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-md font-semibold w-[200px] px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+              >
+                Submit
+              </button>
+                </div>
+            </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-white bg-[rgb(9,29,53)] py-4 ">
+      <div class="max-w-7xl mx-auto text-center">
+        <p>&copy; 2024 Kinplus. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+  </body>
+</html>

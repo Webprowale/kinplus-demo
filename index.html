@@ -33,7 +33,7 @@
       };
     </script>
   </head>
-  <body>
+  <body class="scroll-smooth">
     <nav class="bg-[rgb(9,29,53)] p-3">
       <div class="flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="./" class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -189,7 +189,8 @@
           <button
             type="button"
             class=" transform transition-transform hover:scale-105 focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-md font-semibold w-[200px] px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
-          >
+          onclick="window.location.href='#property'"
+            >
             Explore
           </button>
         </div>
@@ -213,7 +214,7 @@
       </section>
       <!-- Properties -->
       <section class="container pt-20">
-        <div class="text-center">
+        <div class="text-center" id="property">
           <p class="mb-5">NEW PROPERTIES</p>
           <h4 class="text-[#091D35] text-3xl font-bold mb-10">For Sale</h4>
           <div class="flex items-center justify-center">
@@ -397,7 +398,8 @@
               <button
                 type="button"
                 class="transform transition-transform hover:scale-105 focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-md font-semibold w-[200px] px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
-              >
+              onclick="window.location.href='buy.html'"
+                >
                 View More
               </button>
             </div>
@@ -590,7 +592,8 @@
               <button
                 type="button"
                 class="transform transition-transform hover:scale-105 focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-md font-semibold w-[200px] px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
-              >
+             onclick="window.location.href='rent.html'"
+                >
                 View More
               </button>
             </div>
